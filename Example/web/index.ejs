@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My app</title>
+    <link href="/css/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div class="dropdown">
+			<h2>Index</h2>
+			<script type="text/html" template="test1">
+				<span>##name</span><div style="padding-left:10px; font-weight:400; color:blue; border:solid 1px red">##email</div>
+			</script>
+			<div ng-controller="MainController">
+				<input type="text" ng-model="text1" type-ahead="items" text-lookup-attr="name" template-id="test1" filter="{{filters}}" limit="8"/>
+				<button ng-click="disableFilter()">disable filter</button>
+			</div>
+		</div>
+        <hr />
+        <footer>
+            <p>&copy; 2016 - My Application</p>
+        </footer>
+    </div>
+
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+	<script src="/js/angular-resource.min.js"></script>	
+    <script src="/js/app/init.js"></script>
+    <script src="/js/Controllers/Main.js"></script>
+	<script src="/js/Services/apiUser.js"></script>
+    <script src="/js/Directives/typeAhead.js"></script>
+</body>
+</html>
