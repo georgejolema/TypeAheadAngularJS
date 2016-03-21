@@ -1,8 +1,8 @@
-﻿angular.module('app').directive('typeAhead', ["$parse", "$timeout", function ($parse, $timeout)
+﻿angular.module('easyAPI',[]).directive('typeAhead', ['$parse', '$timeout', function ($parse, $timeout)
 {
     return {
-        restrict: "A",
-        templateUrl: "/templates/Directive/typeAhead.html",
+        restrict: 'A',
+        template: '<div class="dropdown"><ul class="dropdown-menu" aria-labelledby="dropdownMenu1"><li ng-repeat="item in $internalItemsType"><a href="#" class="type-ahead-admin">{{item.text}}</a></li></ul></div>',
         link: function (scope, el, attr)
         {
             var textAttr = attr.textLookupAttr;
@@ -43,7 +43,7 @@
 
             function renderData()
             {
-                var container = $(".dropdown-menu").empty();
+                var container = content.find(".dropdown-menu").empty();
                 var items = 0;
                 $.each($internalItemsType, function (i, value)
                 {
